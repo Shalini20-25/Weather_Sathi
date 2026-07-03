@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather App</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!--Sticky Search Header -->
+
+        <header class="search-section">
+
+            <h1 id="title">🌤 Weather App</h1>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Enter city..."
+                    aria-label="City Name"
+                    autocomplete="off"
+                >
+
+                <button
+                    id="searchBtn"
+                    aria-label="Search Weather">
+                    Search
+                </button>
+
+                <button
+                    id="locationBtn"
+                    aria-label="Use My Location">
+                    My Location
+                </button>
+
+            </div>
+
+            <div class="options">
+
+                <!-- Temperature Unit -->
+
+                <div class="option">
+
+                    <label id="unitLabel" for="unitToggle">
+                        °C / °F
+                    </label>
+
+                    <select
+                        id="unitToggle"
+                        aria-label="Temperature Unit">
+
+                        <option value="c">°C</option>
+                        <option value="f">°F</option>
+
+                    </select>
+
+                </div>
+
+                <!-- Language -->
+
+                <div class="option">
+
+                    <label id="languageLabel" for="languageSelect">
+                        Language
+                    </label>
+
+                    <select
+                        id="languageSelect"
+                        aria-label="Language">
+
+                        <option value="en">
+                            English
+                        </option>
+
+                        <option value="hi">
+                            हिन्दी
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- =========================
+             Loading Spinner
+        ========================== -->
+
+        <div
+            id="loading"
+            class="loading hidden">
+
+            <div class="spinner"></div>
+
+            <p id="loadingText">
+                Loading...
+            </p>
+
+        </div>
+
+        <!-- =========================
+             Error Message
+        ========================== -->
+
+        <div
+            id="errorMessage"
+            class="error-message hidden">
+        </div>
+
+        <!-- =========================
+             Toast Notification
+        ========================== -->
+
+        <div
+            id="toast"
+            class="toast hidden">
+        </div>
+
+        <!-- =========================
+             Current Weather
+        ========================== -->
+
+        <section
+            id="currentWeather"
+            class="weather-card hidden">
+
+            <div class="weather-top">
+
+                <div>
+
+                    <h2 id="cityName">
+                        City
+                    </h2>
+
+                    <p id="country">
+                        Country
+                    </p>
+
+                    <p id="localTime">
+                        Local Time
+                    </p>
+
+                </div>
+
+                <img
+                    id="weatherIcon"
+                    src=""
+                    alt="Weather Icon">
+
+            </div>
+
+            <div class="temperature">
+
+                <h1 id="temperature">
+                    --
+                </h1>
+
+            </div>
+
+            <div class="condition">
+
+                <span id="conditionEmoji">
+                    ☀️
+                </span>
+
+                <span id="conditionText">
+                    Sunny
+                </span>
+
+            </div>
+
+            <div class="weather-details">
+
+                <div class="detail">
+
+                    <h4 id="humidityLabel">
+                        Humidity
+                    </h4>
+
+                    <p id="humidity">
+                        --
+                    </p>
+
+                </div>
+
+                <div class="detail">
+
+                    <h4 id="windLabel">
+                        Wind
+                    </h4>
+
+                    <p id="wind">
+                        --
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             Forecast
+        ========================== -->
+
+        <section class="forecast-section">
+
+            <h2
+                id="forecastTitle"
+                class="hidden">
+                5-Day Forecast
+            </h2>
+
+            <div
+                id="forecastContainer"
+                class="forecast-container">
+
+                <!-- Forecast Cards generated by JavaScript -->
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             Footer
+        ========================== -->
+
+        <footer id="footerText">
+
+            Weather data provided by
+            <strong>WeatherAPI.com</strong>
+
+        </footer>
+
+    </div>
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
